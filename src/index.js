@@ -10,12 +10,19 @@ import App from './components/App';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
+const Hello = () => {
+  return (
+    <div> Hello </div>
+  );
+}
+
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(rootReducer)}>
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path='/' component={App} />
+          <Route exact path='/' component={App} />
+          <Route path='/hello' component={Hello} />
         </Switch>
       </div>
     </BrowserRouter>
