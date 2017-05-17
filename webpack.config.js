@@ -1,29 +1,29 @@
-//const path = require('path');
+const path = require('path');
 
 module.exports = {
   entry: [
     './src/index.js'
   ],
   output: {
-    //path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'src'),
     publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+    rules: [
+      {
+        test: /\.js|jsx$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
       }
-    }]
+    ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,
-    publicPath:'/',
+    publicPath: '/',
     contentBase: './'
   }
 }

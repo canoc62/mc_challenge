@@ -14,7 +14,7 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 //   return (
 //     <div> Hello </div>
 //   );
-// }
+// }=
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(rootReducer)}>
