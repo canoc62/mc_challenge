@@ -1,32 +1,57 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { fetchArticles } from './../actions/actions'
+import { Link } from 'react-router-dom';
+import { fetchArticles, fetchTopics } from './../actions/actions';
+import ArticleItem from './ArticleItem';
 
 class ArticlesList extends Component {
-  componentDidMount() {
-    this.props.fetchArticles();
+  componentWillMount() {
+    if (!Object.keys(this.props.articles).length) {
+      console.log('fetchin articles');
+      this.props.fetchArticles();
+    }
+    if (!Object.keys(this.props.topics).length) {
+      console.log('fetchin topics'); 
+      this.props.fetchTopics();
+    }
   }
 
   render() {
-
     const { articles } = this.props;
-    //const titles = articles.map( article => article.title);
-    const titles = _.map(articles, article => article.title);
+    const { topics } = this.props;
+
+    if (!articles || !topics) {
+      return <div>...Loading</div>
+    }
+    const articlesList = _.map(articles, (article) => {
+      for (let i = 0; i < article.topics.length; i += 1) {
+        let topicId = article.topics[i]['id']
+        if (topics[topicId]['following']) {
+          return (
+            <ArticleItem
+              key={article.id}
+              article={article}
+            />
+            );
+          }
+      }
+    });
     
     return (
       <div>
         <h1>Articles List</h1>
+        <h3><Link to='/topics'>Topics</Link></h3>
         <ul>
-          {titles}
+          {articlesList}
         </ul>
       </div>
     );
   }
 }
 
-function mapStateToProps({ articles }) {
-  return { articles };
+function mapStateToProps({ articles, topics }) {
+  return { articles, topics };
 }
 
-export default connect(mapStateToProps, { fetchArticles })(ArticlesList);
+export default connect(mapStateToProps, { fetchArticles, fetchTopics })(ArticlesList);

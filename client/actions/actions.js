@@ -1,6 +1,7 @@
 import { 
   FETCH_ARTICLES, FETCH_ARTICLES_SUCCESS , FETCH_ARTICLES_FAIL,
-  FETCH_TOPICS, FETCH_TOPICS_SUCCESS, FETCH_TOPICS_FAIL 
+  FETCH_TOPICS, FETCH_TOPICS_SUCCESS, FETCH_TOPICS_FAIL,
+  CHANGE_TOPICS_FOLLOWING
 } from './constants';
 
 export function fetchArticles() {
@@ -38,5 +39,12 @@ export function fetchTopicsSuccess(data) {
 export function fetchTopicsFail() {
   return {
     type: FETCH_TOPICS_FAIL
+  }
+}
+
+export function changeTopicsFollowing(id, following) {
+  return {
+    type: CHANGE_TOPICS_FOLLOWING,
+    payload: { 'topic_id': id, 'following': following }
   }
 }
