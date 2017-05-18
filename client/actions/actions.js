@@ -1,8 +1,29 @@
 import { 
+  FETCH_ARTICLE, FETCH_ARTICLE_SUCCESS , FETCH_ARTICLE_FAIL,
   FETCH_ARTICLES, FETCH_ARTICLES_SUCCESS , FETCH_ARTICLES_FAIL,
   FETCH_TOPICS, FETCH_TOPICS_SUCCESS, FETCH_TOPICS_FAIL,
   CHANGE_TOPICS_FOLLOWING
 } from './constants';
+
+export function fetchArticle(article_id) {
+  return {
+    type: FETCH_ARTICLE,
+    article_id
+  }
+}
+
+export function fetchArticleSuccess(data) {
+  return {
+    type: FETCH_ARTICLE_SUCCESS,
+    payload: data
+  }
+}
+
+export function fetchArticleFail() {
+  return {
+    type: FETCH_ARTICLE_FAIL
+  }
+}
 
 export function fetchArticles() {
   return {

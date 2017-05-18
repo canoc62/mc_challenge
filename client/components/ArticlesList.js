@@ -6,12 +6,15 @@ import { fetchArticles, fetchTopics } from './../actions/actions';
 import ArticleItem from './ArticleItem';
 
 class ArticlesList extends Component {
-  componentWillMount() {
-    if (!Object.keys(this.props.articles).length) {
+  componentDidMount() {
+    console.log('this.props: ', this.props);
+    console.log('this.props.articles: ', this.props.articles);
+    console.log('this.props.topics: ', this.props.topics);
+    if (this.props.articles && !Object.keys(this.props.articles).length) {
       console.log('fetchin articles');
       this.props.fetchArticles();
     }
-    if (!Object.keys(this.props.topics).length) {
+    if (this.props.topics && !Object.keys(this.props.topics).length) {
       console.log('fetchin topics'); 
       this.props.fetchTopics();
     }
@@ -26,8 +29,8 @@ class ArticlesList extends Component {
     }
     const articlesList = _.map(articles, (article) => {
       for (let i = 0; i < article.topics.length; i += 1) {
-        let topicId = article.topics[i]['id']
-        if (topics[topicId]['following']) {
+        let topicId = article.topics[i]['id'];
+        if (topics[topicId] && topics[topicId]['following']) {
           return (
             <ArticleItem
               key={article.id}

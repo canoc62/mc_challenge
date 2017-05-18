@@ -8,7 +8,7 @@ export function topics(state = {}, action) {
       const fetchTopicsState = createTopicsState(action.payload.data);
       return fetchTopicsState;
     case CHANGE_TOPICS_FOLLOWING:
-      const newState = Object.assign({}, {...state});
+      const newState = Object.assign({}, state);
       newState[action.payload['topic_id']]['following'] = !action.payload['following'];
       return newState;
     default:
