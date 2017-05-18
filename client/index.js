@@ -3,29 +3,22 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './reducers/index';
 import App from './components/App';
+import rootSaga from './sagas/sagas';
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const sagaMiddleware = createSagaMiddleware();
 
-// const Hello = () => {
-//   return (
-//     <div> Hello </div>
-//   );
-// }=
+//const createStoreWithMiddleware = applyMiddleware(sagaMiddleware)(createStore);
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(rootReducer)}>
+  <Provider store={store}>
     <BrowserRouter>
-      <div>
-        {/*<Switch>
-          <Route exact path='/' component={App} />
-          <Route path='/hello' component={Hello} />
-        </Switch>*/}
-        <App />
-      </div>
+      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById('app-container')

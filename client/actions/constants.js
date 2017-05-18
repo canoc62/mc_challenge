@@ -3,4 +3,8 @@
  
  // Actions
  export const FETCH_ARTICLES = 'fetch_articles';
+ export const FETCH_ARTICLES_SUCCESS = 'fetch_articles_success';
+ export const FETCH_ARTICLES_FAIL = 'fetch_articles_fail';
  export const FETCH_TOPICS = 'fetch_topics';
+ export const FETCH_TOPICS_SUCCESS = 'fetch_topics_success';
+ export const FETCH_TOPICS_FAIL = 'fetch_topics_fail';

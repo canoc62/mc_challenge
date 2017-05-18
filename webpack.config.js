@@ -3,8 +3,9 @@ const webpack= require('webpack');
 
 module.exports = {
   entry: [
-    './client/index.js',
-    'webpack-hot-middleware/client?reload=true'
+    'babel-polyfill',
+    'webpack-hot-middleware/client?reload=true',
+    './client/index.js'
   ],
   output: {
     path: path.join(__dirname, 'client', 'static'),
