@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
 import Articles from './Articles';
+import ArticleDetail from './ArticleDetail';
 import Topics from './Topics';
 
 const Main = () => {

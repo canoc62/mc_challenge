@@ -7,9 +7,10 @@ const Articles = ({ match }) => {
   console.log('match: ', match);
     return (
       <Switch>
-        <Route path={`/${match.url}/:article_id`} component={ArticleDetail} />
         <Route exact path={`${match.url}`} component={ArticlesList} />
+        <Route path={`${match.url}/:article_id`} component={ArticleDetail} />
       </Switch>
+      
     );
 }
 

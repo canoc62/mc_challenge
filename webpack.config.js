@@ -1,11 +1,13 @@
 const path = require('path');
+const webpack= require('webpack');
 
 module.exports = {
   entry: [
-    './src/index.js'
+    './client/index.js',
+    'webpack-hot-middleware/client?reload=true'
   ],
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.join(__dirname, 'client', 'static'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -21,6 +23,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ],
   devServer: {
     historyApiFallback: true,
     publicPath: '/',
