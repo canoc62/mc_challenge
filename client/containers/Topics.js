@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTopics, changeTopicsFollowing } from './../actions/actions'
-import TopicItem from './TopicItem';
+import TopicItem from './../components/TopicItem';
 
 class Topics extends Component {
   constructor() {
