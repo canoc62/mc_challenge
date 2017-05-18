@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { fetchArticles } from './../actions/actions'
 
@@ -11,10 +12,8 @@ class ArticlesList extends Component {
 
     const { articles } = this.props;
     //const titles = articles.map( article => article.title);
-    const titles = [];
-    for (let i in articles) {
-      titles.push(articles[i].title)
-    }
+    const titles = _.map(articles, article => article.title);
+    
     return (
       <div>
         <h1>Articles List</h1>
