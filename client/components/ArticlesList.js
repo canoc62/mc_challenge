@@ -7,23 +7,27 @@ import ArticleItem from './ArticleItem';
 
 class ArticlesList extends Component {
   componentWillMount() {
-    this.props.fetchArticles();
-    this.props.fetchTopics();
-  }
-
-  componentDidMount() {
-
+    if (!Object.keys(this.props.articles).length) {
+      console.log('fetchin articles');
+      this.props.fetchArticles();
+    }
+    if (!Object.keys(this.props.topics).length) {
+      console.log('fetchin topics'); 
+      this.props.fetchTopics();
+    }
   }
 
   render() {
-
     const { articles } = this.props;
     const { topics } = this.props;
-    
+
+    if (!articles || !topics) {
+      return <div>...Loading</div>
+    }
     const articlesList = _.map(articles, (article) => {
       for (let i = 0; i < article.topics.length; i += 1) {
-        let stringId = article.topics[i]['id'].toString();
-        if (topics[stringId]) {
+        let topicId = article.topics[i]['id']
+        if (topics[topicId]['following']) {
           return (
             <ArticleItem
               key={article.id}

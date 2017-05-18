@@ -9,32 +9,24 @@ class Topics extends Component {
   constructor() {
     super();
 
-    // this.state = {
-    //   fetchedTopics: false
-    // }
     this.handleFollowingButton = this.handleFollowingButton.bind(this);
   }
 
   componentDidMount() {
-    //if (!this.props.topics) {
-      //this.props.fetchTopics();
-      //this.setState({fetchedTopics: true})
-    //}
+    if (!Object.keys(this.props.topics).length) {
+      console.log('fetchin topics'); 
+      this.props.fetchTopics();
+    }
   }
 
   handleFollowingButton(topicId, followingStatus) {
-    console.log('topic Id of topic clicked:', topicId);
-    console.log('following status:', followingStatus);
     this.props.changeTopicsFollowing(topicId, followingStatus);
   }
 
   render() {
 
     const { topics } = this.props;
-    //console.log('Topics props:', this.props);
-    //const titles = articles.map( article => article.title);
     const titles = _.map(topics, (topic) => { 
-      //console.log(topic.topic['id']);
       let topicId = topic.topic['id'];
       let followingStatus = topic['following'];
 
