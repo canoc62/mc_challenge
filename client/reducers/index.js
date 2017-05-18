@@ -4,7 +4,7 @@ import { topics } from './topics';
 
 const rootReducer = combineReducers({
   articles,
-  topics: topics
+  topics
 });
 
 export default rootReducer;

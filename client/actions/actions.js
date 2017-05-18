@@ -45,6 +45,6 @@ export function fetchTopicsFail() {
 export function changeTopicsFollowing(id, following) {
   return {
     type: CHANGE_TOPICS_FOLLOWING,
-    payload: { 'topic': id, 'following': following}
+    payload: { 'topic_id': id, 'following': following }
   }
 }

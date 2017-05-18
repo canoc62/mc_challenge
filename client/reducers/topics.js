@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { 
   FETCH_TOPICS_SUCCESS, CHANGE_TOPICS_FOLLOWING 
 } from './../actions/constants';
@@ -6,12 +5,12 @@ import {
 export function topics(state = {}, action) {
   switch (action.type) {
     case FETCH_TOPICS_SUCCESS:
-      //const fetchTopicsState = _.mapKeys({'topic': action.payload.data, following: true}, ());
       const fetchTopicsState = createTopicsState(action.payload.data);
-      console.log('fetchTopicsState:, ', fetchTopicsState);
       return fetchTopicsState;
     case CHANGE_TOPICS_FOLLOWING:
-      return state;
+      const newState = Object.assign({}, {...state});
+      newState[action.payload['topic_id']]['following'] = !action.payload['following'];
+      return newState;
     default:
       return state;
   }
