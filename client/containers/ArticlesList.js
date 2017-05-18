@@ -3,19 +3,14 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchArticles, fetchTopics } from './../actions/actions';
-import ArticleItem from './ArticleItem';
+import ArticleItem from './../components/ArticleItem';
 
 class ArticlesList extends Component {
   componentDidMount() {
-    console.log('this.props: ', this.props);
-    console.log('this.props.articles: ', this.props.articles);
-    console.log('this.props.topics: ', this.props.topics);
     if (this.props.articles && !Object.keys(this.props.articles).length) {
-      console.log('fetchin articles');
       this.props.fetchArticles();
     }
     if (this.props.topics && !Object.keys(this.props.topics).length) {
-      console.log('fetchin topics'); 
       this.props.fetchTopics();
     }
   }

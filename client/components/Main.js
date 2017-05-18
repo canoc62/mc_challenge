@@ -2,9 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 //import Articles from './Articles';
-import ArticlesList from './ArticlesList';
-import ArticleDetail from './ArticleDetail';
-import Topics from './Topics';
+import ArticlesList from './../containers/ArticlesList';
+import ArticleDetail from './../containers/ArticleDetail';
+import Topics from './../containers/Topics';
 
 const Main = () => {
   return (
