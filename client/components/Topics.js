@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { fetchTopics } from './../actions/actions'
+import { fetchTopics, changeTopicsFollowing } from './../actions/actions'
 
 class Topics extends Component {
+  constructor() {
+    super();
+
+    this.handleFollowingButton = this.handleFollowingButton.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchTopics();
+  }
+
+  handleFollowingButton() {
+
   }
 
   render() {
@@ -30,4 +40,4 @@ function mapStateToProps({ topics }) {
   return { topics };
 }
 
-export default connect(mapStateToProps, { fetchTopics })(Topics);
+export default connect(mapStateToProps, { fetchTopics, changeTopicsFollowing })(Topics);

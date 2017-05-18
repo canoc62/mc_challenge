@@ -4,8 +4,12 @@ import { connect } from 'react-redux';
 import { fetchArticles } from './../actions/actions'
 
 class ArticlesList extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchArticles();
+  }
+
+  componentDidMount() {
+    
   }
 
   render() {
