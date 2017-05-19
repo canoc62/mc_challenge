@@ -38,8 +38,6 @@ class ArticlesList extends Component {
     
     return (
       <div>
-        <h1>Articles List</h1>
-        <h3><Link to='/topics'>Topics</Link></h3>
         <ul>
           {articlesList}
         </ul>
