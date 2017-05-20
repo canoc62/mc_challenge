@@ -21,7 +21,7 @@ const TopicItem = (props) => {
   );
 }
 
-const styles = {
+let styles = {
   button: {
     float: 'right',
     border: '',

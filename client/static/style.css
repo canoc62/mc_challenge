@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
 }
+body {
+  background: #fafafa;
+}
 
 a {
   text-decoration: none;
@@ -39,7 +42,6 @@ ol, ul {
 }
 
 #nav {
-  box-shadow: 0 1px 0 0;
   border-bottom: 1px solid #ecebeb;
   background-color: #fafafa;
 }
@@ -58,7 +60,8 @@ ol, ul {
 /* Articles */
 
 #article-list-container {
-  background-color: #fafafa;
+  padding-top: 10px;
+  height: 100vh;
 }
 
 /* Article Item/Article Detail Item */
@@ -119,6 +122,7 @@ ol, ul {
 #article-detail-item-container {
   background-color: #fafafa;
   height: 100vh;
+  padding-top: 10px;
 }
 
 /* Topics List */
@@ -131,6 +135,7 @@ ol, ul {
 .topics-list-container h3 {
   text-align: center;
   margin-bottom: 5px;
+  padding-top: 10px;
 }
 
 .topics-list {
