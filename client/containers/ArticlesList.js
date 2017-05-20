@@ -27,19 +27,18 @@ class ArticlesList extends Component {
         let topicId = article.topics[i]['id'];
         if (topics[topicId] && topics[topicId]['following']) {
           return (
-            <ArticleItem
-              key={article.id}
-              article={article}
-            />
+            <li key={article.id}>
+              <ArticleItem
+                article={article}
+              />
+            </li>
             );
           }
       }
     });
     
     return (
-      <div>
-        <h1>Articles List</h1>
-        <h3><Link to='/topics'>Topics</Link></h3>
+      <div id='article-list-container'>
         <ul>
           {articlesList}
         </ul>

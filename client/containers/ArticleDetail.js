@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchArticle } from './../actions/actions';
+import ArticleDetailItem from './../components/ArticleDetailItem';
 
 class ArticleDetail extends Component {
   componentDidMount() {
@@ -12,11 +13,9 @@ class ArticleDetail extends Component {
 
     if (!article) return <div>...Loading</div>;
 
-    console.log('article prop: ', this.props.article);
-
     return (
-      <div>
-        ARTICLE DETAIL for Article: {this.props.match.params.id}
+      <div id='article-detail-item-container'>
+        <ArticleDetailItem article={article} />
       </div>
     );
   }

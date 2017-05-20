@@ -41,12 +41,13 @@ class Topics extends Component {
     });
     
     return (
-      <div>
-        <h1>Topics List</h1>
-        <h3><Link to='/'>Articles</Link></h3>
-        <ul>
-          {titles}
-        </ul>
+      <div className='topics-list-container'>
+        <h3>Topics</h3>
+        <div className='topics-list'>
+          <ul>
+            {titles}
+          </ul>
+        </div>
       </div>
     );
   }
