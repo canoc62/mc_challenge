@@ -14,7 +14,9 @@ class ArticleDetail extends Component {
     if (!article) return <div>...Loading</div>;
 
     return (
-      <ArticleDetailItem article={article} />
+      <div id='article-detail-item-container'>
+        <ArticleDetailItem article={article} />
+      </div>
     );
   }
 }

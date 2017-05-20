@@ -1,11 +1,11 @@
 import React from 'react';
 
 const TopicItem = (props) => {
-  let buttonText; // = !props.topic.following ? '+ Follow' : 'Following ';
+  let buttonText;
 
   if (props.topic.following) {
     buttonText = 'Following';
-    styles.button.border = '1px solid red';
+    styles.button.border = '1px solid #ff0000';
     styles.button.color = 'red';
   } else {
     buttonText = '+ Follow';

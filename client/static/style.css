@@ -30,7 +30,7 @@ ol, ul {
 #banner {
   background-color: #b5103a;
   height: 52px;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-size: 22px;
   font-weight: 100;
@@ -60,6 +60,8 @@ ol, ul {
 #article-list-container {
   background-color: #fafafa;
 }
+
+/* Article Item/Article Detail Item */
 
 .article-item {
   width: 450px;
@@ -101,17 +103,22 @@ ol, ul {
 }
 
 .read-more {
-  color: grey;
+  color: #cec6c6;
 }
 
 .topic {
-  background: grey;
+  background: #7f7878;
   padding: 3px;
   color: #fff;
   border-radius: 5px;
   margin: 2px;
   box-sizing: border-box;
   display: inline-block;
+}
+
+#article-detail-item-container {
+  background-color: #fafafa;
+  height: 100vh;
 }
 
 /* Topics List */
@@ -131,6 +138,8 @@ ol, ul {
   background: #fff;
   height: 100vh;
   width: 450px;
+  border: 1px solid #ecebeb;
+  padding: 10px;
 }
 
 .topic-list-item {
