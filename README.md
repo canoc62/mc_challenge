@@ -1,2 +1,11 @@
-State - 
-  follow7147671825
+# MedCircle Challenge
+
+#How to install
+````
+npm install
+````
+
+#How to run
+````
+npm start
+````

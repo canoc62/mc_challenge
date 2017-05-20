@@ -83,7 +83,7 @@ ol, ul {
 
 .article-item-source-container, .article-item-summary, 
 .article-item-media-container, .article-item-body,
-.article-item-likes-container {
+.article-item-likes-container, .article-item-createdAt-container {
   margin-top: 5px;
 }
 
