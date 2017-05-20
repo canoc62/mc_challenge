@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchArticle } from './../actions/actions';
+import { fetchArticle, fetchArticles } from './../actions/actions';
 import ArticleDetailItem from './../components/ArticleDetailItem';
 
 class ArticleDetail extends Component {
   componentDidMount() {
+    if (this.props.articles && !Object.keys(this.props.articles).length) {
+      this.props.fetchArticles();
+    }
     this.props.fetchArticle(this.props.match.params.id);
   }
 
@@ -22,7 +25,7 @@ class ArticleDetail extends Component {
 }
 
 function mapStateToProps({ articles }, ownProps) {
-  return { article: articles[ownProps.match.params.id] };
+  return { articles, article: articles[ownProps.match.params.id] };
 }
 
-export default connect(mapStateToProps, { fetchArticle })(ArticleDetail);
+export default connect(mapStateToProps, { fetchArticle, fetchArticles })(ArticleDetail);
