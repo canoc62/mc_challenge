@@ -43,7 +43,7 @@ ol, ul {
 
 #nav {
   border-bottom: 1px solid #ecebeb;
-  background-color: #fafafa;
+  background-color: #fff;
 }
 
 #nav ul li {
@@ -120,7 +120,6 @@ ol, ul {
 }
 
 #article-detail-item-container {
-  background-color: #fafafa;
   height: 100vh;
   padding-top: 10px;
 }
@@ -128,7 +127,6 @@ ol, ul {
 /* Topics List */
 
 .topics-list-container {
-  background: #fafafa;
   height: 100vh;
 }
 
