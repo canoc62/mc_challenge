@@ -37,7 +37,7 @@ class ArticlesList extends Component {
     });
     
     return (
-      <div>
+      <div id='article-list-container'>
         <ul>
           {articlesList}
         </ul>

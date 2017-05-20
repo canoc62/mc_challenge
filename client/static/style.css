@@ -1,38 +1,14 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-/*
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}*/
-/* HTML5 display-role reset for older browsers */
-/*article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}*/
-
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #182026;
+  cursor: pointer;
 }
 
 main {
@@ -43,12 +19,13 @@ ol, ul {
 	list-style: none;
 }
 
+/* Banner/Nav */
+
 #banner-nav-container {
   position: fixed;
   width: 100%;
   margin-top: -100px;
 }
-
 
 #banner {
   background-color: #b5103a;
@@ -56,7 +33,6 @@ ol, ul {
   color: #FFF;
   text-align: center;
   font-size: 22px;
-  font-family: sans-serif;
   font-weight: 100;
   padding: 13px;
   box-sizing: border-box;
@@ -64,7 +40,7 @@ ol, ul {
 
 #nav {
   box-shadow: 0 1px 0 0;
-  border-bottom: grey;
+  border-bottom: 1px solid #ecebeb;
   background-color: #fafafa;
 }
 
@@ -74,10 +50,89 @@ ol, ul {
 }
 
 #nav ul li a {
-  text-decoration: none;
-  font-family: HelveticaNeue;
   font-weight: 300;
   color: #182026;
+  font-weight: bold;
 }
 
-/*background: rgba(125,188,255,.6);*/
+/* Articles */
+
+#article-list-container {
+  background-color: #fafafa;
+}
+
+.article-item {
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #ecebeb;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 13px;
+}
+
+.article-item-header {
+  font-size: 21px;
+}
+
+.article-item-source-container, .article-item-summary, 
+.article-item-media-container, .article-item-body,
+.article-item-likes-container {
+  margin-top: 5px;
+}
+
+.article-item-media-container {
+  height: 100%;
+  width: 100%
+}
+
+.article-item-media-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.article-item-topics-container {
+  margin: 5px 2px 2px 0;
+}
+
+.article-item-topics-container div {
+  display: inline-block;
+}
+
+.read-more {
+  color: grey;
+}
+
+.topic {
+  background: grey;
+  padding: 3px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 2px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* Topics List */
+
+.topics-list-container {
+  background: #fafafa;
+  height: 100vh;
+}
+
+.topics-list-container h3 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.topics-list {
+  margin: 0 auto;
+  background: #fff;
+  height: 100vh;
+  width: 450px;
+}
+
+.topic-list-item {
+  margin-bottom: 10px;
+}
